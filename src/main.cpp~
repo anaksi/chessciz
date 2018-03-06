@@ -1,0 +1,23 @@
+#include <stdio.h> 
+#include <stdlib.h> 
+#include <iostream> 
+#include <string> 
+
+#include "board.h"
+#include "board_print_plain.h"
+
+using namespace std;
+
+int main(){
+
+print_board();
+while (1){
+cout << "haha";
+moves();
+print_board();
+}
+
+
+return 0;
+}
+
