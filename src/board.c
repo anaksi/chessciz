@@ -53,5 +53,6 @@ board[y][x]=' ';*/
  int d2=xod[4]-'0'-1;
  board[l2][d2]=board[l1][d1];
  board[l1][d1]=' ';
+ printf("\n");
 
 }
