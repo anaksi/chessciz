@@ -55,10 +55,20 @@ void ClearBoard(){
 void print_board(){
 
 int i,j;
-
+char f = 'a';
+printf("  ");
 for (i=0; i<8; i++){
-    for (j=0; j<8;j++)
-      printf("%c",board[j][i]);
+	printf("%c", f);
+	printf(" ");
+	f=f+1;
+	}
+printf("\n");
+for (i=0; i<8; i++){
+    printf("%d",i+1);
+    for (j=0; j<8;j++){
+      printf("|");	
+      printf("%c",board[j][i]);}
+    printf("|");
     printf("\n");
 }
 }
