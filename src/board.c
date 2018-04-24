@@ -1,6 +1,7 @@
 #include <stdio.h> 
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 #include "board_print_plain.h"
 #include "board.h"
 
@@ -51,8 +52,65 @@ board[y][x]=' ';*/
  int d1=xod[1]-'0'-1;
  int l2=xod[3]-'a';
  int d2=xod[4]-'0'-1;
- board[l2][d2]=board[l1][d1];
- board[l1][d1]=' ';
- printf("\n");
+if (board[l1][d1]=='p' || board[l1][d1]=='P'){
+	if (l2 - l1 == 0 && (d2 - d1 == 2 || d2 - d1 == 1)){
+		 board[l2][d2]=board[l1][d1];
+ 		 board[l1][d1]=' ';
+		 printf("\n");}
+	else {printf("\n");
+	      printf("Wrong move");
+	      printf("\n");}
+}
+if (board[l1][d1]=='r' || board[l1][d1]=='R'){
+	if (l2 - l1 == 0 || d2 - d1 == 0){
+		 board[l2][d2]=board[l1][d1];
+ 		 board[l1][d1]=' ';
+		 printf("\n");}
+	else {printf("\n");
+	      printf("Wrong move");
+	      printf("\n");}
+}
+if (board[l1][d1]=='n' || board[l1][d1]=='N'){
+	if ((l2 - l1 == 1 || l2 - l1 == 2 || l2 - l1 == -1 || l2 - l1 == -2) && (d2 - d1 == 1 || d2 - d1 == 2 || d2 - d1 == -1 || d2 - d1 == -2)){
+		 board[l2][d2]=board[l1][d1];
+ 		 board[l1][d1]=' ';
+		 printf("\n");}
+	else {printf("\n");
+	      printf("Wrong move");
+	      printf("\n");}
+}
+if (board[l1][d1]=='b' || board[l1][d1]=='B'){
+	if (abs(l2 - l1) == abs(d2 - d1)){
+		 board[l2][d2]=board[l1][d1];
+ 		 board[l1][d1]=' ';
+		 printf("\n");}
+	else {printf("\n");
+	      printf("Wrong move");
+	      printf("\n");}
+}
+if (board[l1][d1]=='k' || board[l1][d1]=='K'){
+	if (l2 - l1 <= 1 && d2 - d1 <= 1){
+		 board[l2][d2]=board[l1][d1];
+ 		 board[l1][d1]=' ';
+		 printf("\n");}
+	else {printf("\n");
+	      printf("Wrong move");
+	      printf("\n");}
+}
+if (board[l1][d1]=='q' || board[l1][d1]=='Q'){
+	if ((l2 - l1 == 0 || d2 - d1 == 0) || (abs(l2 - l1) == abs(d2 - d1))){
+		 board[l2][d2]=board[l1][d1];
+ 		 board[l1][d1]=' ';
+		 printf("\n");}
+	else {printf("\n");
+	      printf("Wrong move");
+	      printf("\n");}
+}
+
+
+
+
+
+
 
 }
