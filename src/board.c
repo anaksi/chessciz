@@ -1,4 +1,4 @@
-#include <stdio.h> 
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
@@ -53,7 +53,7 @@ board[y][x]=' ';*/
  int l2=xod[3]-'a';
  int d2=xod[4]-'0'-1;
 if (board[l1][d1]=='p' || board[l1][d1]=='P'){
-	if (l2 - l1 == 0 && (d2 - d1 == 2 || d2 - d1 == 1)){
+	if ((l2 - l1 == 0 && (d2 - d1 == 2 || d2 - d1 == 1))&&(board[l1][d1+1]==' ')&&(board[l1][d1+2]==' ')){
 		 board[l2][d2]=board[l1][d1];
  		 board[l1][d1]=' ';
 		 printf("\n");}
@@ -62,7 +62,27 @@ if (board[l1][d1]=='p' || board[l1][d1]=='P'){
 	      printf("\n");}
 }
 if (board[l1][d1]=='r' || board[l1][d1]=='R'){
-	if (l2 - l1 == 0 || d2 - d1 == 0){
+    int check = 0;
+    int r;
+    if (l2 - l1 == 0)
+        for(r=abs(d2-d1)-1; r > 0;r=r-1)
+            if (d2>d1){
+                if (board[l1][d1+r] != ' ')
+                    check = 1;
+            } else
+                 if (board[l1][d1-r] != ' ')
+                    check = 1;
+    if (d2 - d1 == 0)
+        for(r=abs(l2-l1)-1; r > 0;r=r-1)
+            if (l2>l1){
+                if (board[l1+r][d1] != ' ')
+                    check = 1;
+            } else
+                 if (board[l1-r][d1] != ' ')
+                    check = 1;
+
+
+	if ((l2 - l1 == 0 || d2 - d1 == 0)&& check == 0){
 		 board[l2][d2]=board[l1][d1];
  		 board[l1][d1]=' ';
 		 printf("\n");}
