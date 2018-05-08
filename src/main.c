@@ -10,9 +10,12 @@
 int main(int argc, char *argv[]){
   InitBoard();
   //print_board();
-
+char xod[16];
 while(1){
-moves();
+//while (GetLine(xod,sizeof(xod))){}
+scanf("%s",xod);
+printf("%s",xod);
+moves(xod);
 print_board();
 }
 

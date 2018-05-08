@@ -15,7 +15,7 @@
 
 
 
-static int GetLine(char *buff, size_t sz) {
+/*static int GetLine(char *buff, size_t sz) {
     int ch, extra;
     if (fgets (buff, sz, stdin) == NULL) {
         return 1;
@@ -28,16 +28,15 @@ static int GetLine(char *buff, size_t sz) {
     }
     buff[strlen(buff)-1] = '\0';
     return 0;
-}
+}*/
 
 
 
-void moves(){
-  print_board();
-char xod[16];
+int moves(char xod[]){
+  
+
 //xod = malloc(100*sizeof(char));
-while (GetLine(xod,sizeof(xod))){}
- printf("%s",xod);
+
 /*int x,x1,y,y1;
 int i=0;
 
@@ -56,10 +55,12 @@ if (board[l1][d1]=='p' || board[l1][d1]=='P'){
 	if ((l2 - l1 == 0 && (d2 - d1 == 2 || d2 - d1 == 1))&&(board[l1][d1+1]==' ')&&(board[l1][d1+2]==' ')){
 		 board[l2][d2]=board[l1][d1];
  		 board[l1][d1]=' ';
-		 printf("\n");}
+		 printf("\n");
+		 return 1;}
 	else {printf("\n");
 	      printf("Wrong move");
-	      printf("\n");}
+	      printf("\n");
+	      return 0;}
 }
 if (board[l1][d1]=='r' || board[l1][d1]=='R'){
     int check = 0;
@@ -85,50 +86,61 @@ if (board[l1][d1]=='r' || board[l1][d1]=='R'){
 	if ((l2 - l1 == 0 || d2 - d1 == 0)&& check == 0){
 		 board[l2][d2]=board[l1][d1];
  		 board[l1][d1]=' ';
-		 printf("\n");}
+		 printf("\n");
+		 return 1;}
 	else {printf("\n");
 	      printf("Wrong move");
-	      printf("\n");}
+	      printf("\n");
+		return 0;}
 }
 if (board[l1][d1]=='n' || board[l1][d1]=='N'){
 	if ((l2 - l1 == 1 || l2 - l1 == 2 || l2 - l1 == -1 || l2 - l1 == -2) && (d2 - d1 == 1 || d2 - d1 == 2 || d2 - d1 == -1 || d2 - d1 == -2)){
 		 board[l2][d2]=board[l1][d1];
  		 board[l1][d1]=' ';
-		 printf("\n");}
+		 printf("\n");
+		 return 1;}
 	else {printf("\n");
 	      printf("Wrong move");
-	      printf("\n");}
+	      printf("\n");
+		return 0;}
 }
 if (board[l1][d1]=='b' || board[l1][d1]=='B'){
 	if (abs(l2 - l1) == abs(d2 - d1)){
 		 board[l2][d2]=board[l1][d1];
  		 board[l1][d1]=' ';
-		 printf("\n");}
+		 printf("\n");
+		 return 1;}
 	else {printf("\n");
 	      printf("Wrong move");
-	      printf("\n");}
+	      printf("\n");
+	      return 0;}
 }
 if (board[l1][d1]=='k' || board[l1][d1]=='K'){
 	if (l2 - l1 <= 1 && d2 - d1 <= 1){
 		 board[l2][d2]=board[l1][d1];
  		 board[l1][d1]=' ';
-		 printf("\n");}
+		 printf("\n");
+		 return 1;}
 	else {printf("\n");
 	      printf("Wrong move");
-	      printf("\n");}
+	      printf("\n");
+ 	      return 0;}
 }
 if (board[l1][d1]=='q' || board[l1][d1]=='Q'){
 	if ((l2 - l1 == 0 || d2 - d1 == 0) || (abs(l2 - l1) == abs(d2 - d1))){
 		 board[l2][d2]=board[l1][d1];
  		 board[l1][d1]=' ';
-		 printf("\n");}
+		 printf("\n");
+		 return 1;}
 	else {printf("\n");
 	      printf("Wrong move");
-	      printf("\n");}
+	      printf("\n");
+	      return 0;}
 }
 
 
 
+return 0;
 
 
 

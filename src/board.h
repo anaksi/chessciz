@@ -2,8 +2,8 @@
 #define BOARD_H
 
 //void Swap(char *x, char *y);
-//int GetLine(char *buff, size_t sz);
+//static int GetLine(char *buff, size_t sz);
 
-void moves();
+int moves(char xod[]);
 
 #endif
